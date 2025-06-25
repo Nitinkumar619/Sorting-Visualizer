@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #111;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 20px 0 10px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+button,
+select,
+input[type="range"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #222;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover,
+select:hover,
+input[type="range"]:hover {
+  background-color: #333;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#bars-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px;
+  width: 100%;
+  height: 75vh;
+  max-width: 1200px;
+}
+
+.bar {
+  background-color: #4fc3f7;
+  flex: 1 1 auto;
+  max-width: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.bar.active {
+  background-color: orange;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button,
+  select {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  #bars-container {
+    height: 60vh;
+    gap: 1px;
+  }
+
+  .bar {
+    max-width: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  button,
+  select {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #bars-container {
+    height: 50vh;
+  }
+
+  .bar {
+    max-width: 2px;
+  }
+}
